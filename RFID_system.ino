@@ -3,6 +3,7 @@
 #define SS_PIN 10
 #define RST_PIN 9
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
+const int rs = 5 , en = 3, d4 = 2, d5 = 1, d6 = 0, d7 = 6;
 String UID1 = "85 C3 10 E3";  //Ishan Saraswat
 String UID2 = "5E 85 70 8B";  //Ushika Sinha
 String UID3 = "A2 FF D2 59";  //Atharva Naman
@@ -17,7 +18,7 @@ void setup()
   Serial.println();
   pinMode(7,OUTPUT);
   pinMode(5,OUTPUT);
-
+  pinMode(0,OUTPUT);
 }
 void loop() 
 {
@@ -66,8 +67,8 @@ void loop()
   digitalWrite(5,HIGH);
   delay(2000);
   digitalWrite(5,LOW);
-  delay(2000);
-  digitalWrite(7,LOW);
   }
+
+  
   
 } 
